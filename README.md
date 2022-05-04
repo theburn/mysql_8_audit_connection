@@ -7,13 +7,19 @@
 
 # Install
 
-1. after compiling, put `plugin_output_directory/audit_connection.so` under `<mysql_base_dir>/lib/plugin`
+1. after compiling, put `plugin_output_directory/audit_connection.so` in `<mysql_base_dir>/lib/plugin`
 2. place the following configuration in the `[mysqld]` section of `/etc/my.cnf`
 
 ```ini
 plugin-load-add=audit_connection.so
 audit_connection=FORCE_PLUS_PERMANENT
 ```
+
+# Log roration
+
+1. <data_dir>/audit_connection.log;
+2. 50MB per log file;
+3. keep 7 files;
 
 # Performance
 
